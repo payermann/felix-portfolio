@@ -1,6 +1,6 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/payermann/felix-portfolio-backend
-[submodule "front"]
+[submodule "frontend"]
 	path = frontend
 	url = https://github.com/payermann/felix-portfolio-frontend
