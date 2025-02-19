@@ -7,7 +7,7 @@
 ```sh
 docker-compose up -d
 
-docker-compose run --rm certbot certonly --webroot --webroot-path=/usr/share/nginx/html -d example.com
+docker-compose run --rm certbot certonly --webroot --webroot-path=/var/www/certbot -d felix-portfolio.de
 ```
 
 ## Перезапуск Nginx
