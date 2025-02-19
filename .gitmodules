@@ -1,6 +1,6 @@
 [submodule "backend"]
 	path = backend
-	url = https://github.com/payermann/felix-portfolio-backend
+	url = git@github.com:payermann/felix-portfolio-backend.git
 [submodule "frontend"]
 	path = frontend
-	url = https://github.com/payermann/felix-portfolio-frontend
+	url = git@github.com:payermann/felix-portfolio-frontend.git
