@@ -200,3 +200,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
+/certbot
+/letsencrypt

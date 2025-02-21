@@ -1,0 +1,9 @@
+FROM alpine:latest
+
+RUN apk update && apk add --no-cache nginx certbot certbot-nginx
+
+RUN mkdir -p /var/www/certbot /etc/letsencrypt
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+ENTRYPOINT ["sh", "-c", "nginx && certbot certonly --webroot --webroot-path=/var/www/certbot --agree-tos --email payermann@gmail.com --no-eff-email -d felix-portfolio.de -d www.felix-portfolio.de -d api.felix-portfolio.de -d www.api.felix-portfolio.de"]

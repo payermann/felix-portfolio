@@ -17,3 +17,12 @@ docker-compose run --rm certbot certonly --webroot --webroot-path=/var/www/certb
 ```sh
 docker-compose restart nginx
 ```
+
+## Первоначальная настройка
+
+```sh
+docker build -t certbot-init -f Dockerfile.certbot-init .
+
+docker run --rm -p 80:80 -v "$(pwd)/letsencrypt:/etc/letsencrypt" -v "$(pwd)/certbot:/var/www/certbot" certbot-init
+```
+тем самым будут созданы папки с сертификатами, и потом их можно будет использовать в основном docker-compose
