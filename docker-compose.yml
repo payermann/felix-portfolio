@@ -44,7 +44,8 @@ services:
     volumes:
       - "./letsencrypt:/etc/letsencrypt"
       - "./certbot:/var/www/certbot"
-    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --deploy-hook 'docker exec felix-portfolio-nginx nginx -s reload'; sleep 168h & wait $${!}; done"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    entrypoint: /bin/sh -c "apk add --no-cache docker-cli && trap exit TERM; while :; do certbot renew --deploy-hook 'docker exec felix-portfolio-nginx nginx -s reload'; sleep 168h & wait $${!}; done"
     depends_on:
       - nginx    
     networks:
